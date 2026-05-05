@@ -18,8 +18,8 @@ def setDM(self, DM dm):
 
 The underlying C routine called is **`SNESSetDM`** in
 `src/snes/interface/snes.c`. Internally, `SNESSetDM` stores a reference
-to the DM on the SNES object and — if finite-difference coloring is
-requested via `-snes_fd_color` — automatically invokes
+to the DM on the SNES object, and if finite-difference coloring is
+requested via `-snes_fd_color`, automatically invokes
 `DMSNESSetFunctionLocal` and sets up the coloring context by calling
 `DMCreateColoring` on the stored DM before the first Newton step.
 
